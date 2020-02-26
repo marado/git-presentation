@@ -40,14 +40,14 @@ no central repository, no ``master of the truth''
 
 \begin{itemize}
 \item{} this includes your own repositories, gerrit, etc.
-\item{} what is a repository? ( master, origin/master )
+\item{} what is a repository? (master, origin/master)
 \end{itemize}
 \end{slide}
 
 \begin{slide}
---force
-
-\# AKA, I'm doing something wrong
+\begin{verbatim}
+git push --force # AKA, I'm doing something wrong
+\end{verbatim}
 \end{slide}
 
 \begin{slide}
@@ -88,6 +88,7 @@ commits have a parent...
 \begin{slide}
 merge vs. rebase
 
+\begin{small}
 Merge:
 \begin{verbatim}
 git log --pretty=oneline
@@ -106,16 +107,21 @@ Rebase: \\
 \item{} Use merge in cases where you want a set of commits to be clearly grouped together in history
 \item{} Use rebase when you want to keep a linear commit history
 \end{itemize}
+\end{small}
 \end{slide}
 
 \begin{slide}
+\begin{verbatim}
 HEAD, HEAD~1
+\end{verbatim}
 
+\begin{small}
 \begin{itemize}
-\item{} http://marklodato.github.io/visual-git-guide/checkout-branch.svg
-\item{} http://marklodato.github.io/visual-git-guide/checkout-detached.svg
+	\item{} \url{http://marklodato.github.io/visual-git-guide/checkout-branch.svg}
+	\item{} \url{http://marklodato.github.io/visual-git-guide/checkout-detached.svg}
 \end{itemize}
 %%% Copyright © 2010, Mark Lodato -- CC BY-NC-SA 3.0 USA -- https://github.com/MarkLodato/visual-git-guide
+\end{small}
 \end{slide}
 
 \begin{slide}
@@ -140,7 +146,7 @@ git fetch # instead of a full git pull
 git checkout (-b)
 git branch (-a, -D)
 git show
-git diff (local changes, paths, between commits, between branches...)
+git diff (local changes, paths, between commits, branches...)
 git grep
 git archive
 git log (commits, branches, tags, formats...)
@@ -158,6 +164,14 @@ other useful things
 \item{} .gitignore
 \item{} pathogen
 \end{itemize}
+\end{slide}
+
+\begin{slide}
+\begin{center}
+\begin{Huge}
+Questions?
+\end{Huge}
+\end{center}
 \end{slide}
 
 \end{document}

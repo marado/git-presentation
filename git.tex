@@ -1,84 +1,163 @@
-% 1
-# git init
-% this is a talk for git users, not for those who don't know git
+% document type
+\documentclass[landscape]{slides}
 
-% 2
-no central repository, no "master of the truth"
-% this includes your own repositories, gerrit, etc.
-% what is a repository? ( master, origin/master )
+% euro/pt stuff
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
 
-% 3 
+% graphs, links, videos, symbols...
+\usepackage{graphicx}
+\usepackage{epsfig,color}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{ifsym}
+\usepackage{mdsymbol}
+
+% Remove page numbers
+\usepackage{nopageno}
+
+% the actual presentation:
+\author{Marcos Marado}
+\title{git}
+\date{February 2020}
+
+\begin{document}
+
+\begin{slide}
+\maketitle
+\end{slide}
+
+\begin{slide}
+\$ git init
+
+\# this is a talk for git users, not for those who don't know git
+\end{slide}
+
+\begin{slide}
+no central repository, no ``master of the truth''
+
+\begin{itemize}
+\item{} this includes your own repositories, gerrit, etc.
+\item{} what is a repository? ( master, origin/master )
+\end{itemize}
+\end{slide}
+
+\begin{slide}
 --force
-% AKA, I'm doing something wrong
 
-% 4
+\# AKA, I'm doing something wrong
+\end{slide}
+
+\begin{slide}
 commits vs. patches
-% commits have commit messages, let's USE them!
-%% git log
-% let's talk about git format-patch, git am, git ammend, git cherry-pick...
-% pick between projects
-% maintain commit's history!
 
-% 5
+\begin{itemize}
+\item{} commits have commit messages, let's USE them!
+	\begin{itemize}
+	\item{} git log
+	\end{itemize}
+\item{} let's talk about git format-patch, git am, git ammend, git cherry-pick...
+\item{} pick between projects
+\item{} maintain commit's history!
+\end{itemize}
+\end{slide}
+
+\begin{slide}
 commits vs. tags
-% change vs. code
 
-% 6
+\begin{itemize}
+\item{} change vs. code
+\item{} branches vs. tags
+\begin{itemize}
+\item{} tip: do you want it to be mutable?
+\end{itemize}
+\end{itemize}
+\end{slide}
+
+\begin{slide}
 commits have a parent...
-% Changes have not: Change-Id
-% perfect for rebases (gerrit uses it for that all the time!)
 
-% 7
+\begin{itemize}
+\item{} Changes have not: Change-Id
+\item{} perfect for rebases (gerrit uses it for that all the time!)
+\end{itemize}
+\end{slide}
+
+\begin{slide}
 merge vs. rebase
-% AKA André's pet peeve
-%% Merge:
-%% git log --pretty=oneline
-%% git log --graph --pretty=oneline
-https://hackernoon.com/hn-images/0*NFscoCQwTuLB8mQu.png
+
+Merge:
+\begin{verbatim}
+git log --pretty=oneline
+git log --graph --pretty=oneline
+\end{verbatim}
+\url{https://hackernoon.com/hn-images/0*NFscoCQwTuLB8mQu.png}
 %%% (c) Tugberk Ugurlu -- http://www.tugberkugurlu.com/
 
-%% Rebase:
-https://miro.medium.com/max/855/1*pzT4KMiZDOFsMOKH-cJjfQ.png
+Rebase: \\
+\url{https://miro.medium.com/max/855/1*pzT4KMiZDOFsMOKH-cJjfQ.png} \\
 %%% (c) Michael Aranda -- https://twitter.com/MichaelAranda0
-https://miro.medium.com/max/1204/1*bXetvZfHi78_SIWKYriZJw.png
+\url{https://miro.medium.com/max/1204/1*bXetvZfHi78_SIWKYriZJw.png}
 %%% (c) Alex Rock -- https://www.orbitale.io
 
-- Use merge in cases where you want a set of commits to be clearly grouped together in history
-- Use rebase when you want to keep a linear commit history
+\begin{itemize}
+\item{} Use merge in cases where you want a set of commits to be clearly grouped together in history
+\item{} Use rebase when you want to keep a linear commit history
+\end{itemize}
+\end{slide}
 
-% 8
+\begin{slide}
 HEAD, HEAD~1
-http://marklodato.github.io/visual-git-guide/checkout-branch.svg
-http://marklodato.github.io/visual-git-guide/checkout-detached.svg
+
+\begin{itemize}
+\item{} http://marklodato.github.io/visual-git-guide/checkout-branch.svg
+\item{} http://marklodato.github.io/visual-git-guide/checkout-detached.svg
+\end{itemize}
 %%% Copyright © 2010, Mark Lodato -- CC BY-NC-SA 3.0 USA -- https://github.com/MarkLodato/visual-git-guide
+\end{slide}
 
-% 9
+\begin{slide}
 squash!
-%% $ git rebase -i HEAD~4
 
-% 10
-other commands
-% git init
-% git clone (-b)
-% git add
-% git rm
-% git commit (-a, --amend, --date, --author...)
-% git pull
-% git push
-% git fetch # instead of a full git pull
-% git checkout (-b)
-% git branch (-a, -D)
-% git show
-% git diff (local changes, paths, between commits, between branches...)
-% git grep
-% git archive
-% git log (commits, branches, tags, formats...)
-% git tag
-% git reset (--hard)
-% git blame
-% git bisect
+\begin{verbatim}
+git rebase -i HEAD~4
+\end{verbatim}
+\end{slide}
 
-% 11
+\begin{slide}
+other git commands
+\begin{verbatim}
+git init
+git clone (-b)
+git add
+git rm
+git commit (-a, --amend, --date, --author...)
+git pull
+git push
+git fetch # instead of a full git pull
+git checkout (-b)
+git branch (-a, -D)
+git show
+git diff (local changes, paths, between commits, between branches...)
+git grep
+git archive
+git log (commits, branches, tags, formats...)
+git tag
+git reset (--hard)
+git blame
+git bisect
+\end{verbatim}
+\end{slide}
+
+\begin{slide}
 other useful things
-% .gitignore
-% pathogen
+
+\begin{itemize}
+\item{} .gitignore
+\item{} pathogen
+\end{itemize}
+\end{slide}
+
+\end{document}

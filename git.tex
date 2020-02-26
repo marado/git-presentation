@@ -1,0 +1,84 @@
+% 1
+# git init
+% this is a talk for git users, not for those who don't know git
+
+% 2
+no central repository, no "master of the truth"
+% this includes your own repositories, gerrit, etc.
+% what is a repository? ( master, origin/master )
+
+% 3 
+--force
+% AKA, I'm doing something wrong
+
+% 4
+commits vs. patches
+% commits have commit messages, let's USE them!
+%% git log
+% let's talk about git format-patch, git am, git ammend, git cherry-pick...
+% pick between projects
+% maintain commit's history!
+
+% 5
+commits vs. tags
+% change vs. code
+
+% 6
+commits have a parent...
+% Changes have not: Change-Id
+% perfect for rebases (gerrit uses it for that all the time!)
+
+% 7
+merge vs. rebase
+% AKA André's pet peeve
+%% Merge:
+%% git log --pretty=oneline
+%% git log --graph --pretty=oneline
+https://hackernoon.com/hn-images/0*NFscoCQwTuLB8mQu.png
+%%% (c) Tugberk Ugurlu -- http://www.tugberkugurlu.com/
+
+%% Rebase:
+https://miro.medium.com/max/855/1*pzT4KMiZDOFsMOKH-cJjfQ.png
+%%% (c) Michael Aranda -- https://twitter.com/MichaelAranda0
+https://miro.medium.com/max/1204/1*bXetvZfHi78_SIWKYriZJw.png
+%%% (c) Alex Rock -- https://www.orbitale.io
+
+- Use merge in cases where you want a set of commits to be clearly grouped together in history
+- Use rebase when you want to keep a linear commit history
+
+% 8
+HEAD, HEAD~1
+http://marklodato.github.io/visual-git-guide/checkout-branch.svg
+http://marklodato.github.io/visual-git-guide/checkout-detached.svg
+%%% Copyright © 2010, Mark Lodato -- CC BY-NC-SA 3.0 USA -- https://github.com/MarkLodato/visual-git-guide
+
+% 9
+squash!
+%% $ git rebase -i HEAD~4
+
+% 10
+other commands
+% git init
+% git clone (-b)
+% git add
+% git rm
+% git commit (-a, --amend, --date, --author...)
+% git pull
+% git push
+% git fetch # instead of a full git pull
+% git checkout (-b)
+% git branch (-a, -D)
+% git show
+% git diff (local changes, paths, between commits, between branches...)
+% git grep
+% git archive
+% git log (commits, branches, tags, formats...)
+% git tag
+% git reset (--hard)
+% git blame
+% git bisect
+
+% 11
+other useful things
+% .gitignore
+% pathogen
